@@ -46,7 +46,6 @@ const Color lfRefOutlineVariantLight = Color(0xFFC4C8BA);
 const Color lfRefShadowLight = Color(0xFF000000);
 const Color lfRefScrimLight = Color(0xFF000000);
 
-
 // Reference Color Tokens for Dark Theme
 const Color lfRefPrimaryDark = Color(0xFFB0D18B);
 const Color lfRefOnPrimaryDark = Color(0xFF1D3702);
@@ -93,3 +92,8 @@ const Color lfRefOutlineVariantDark = Color(0xFF44483D);
 const Color lfRefShadowDark = Color(0xFF000000);
 const Color lfRefScrimDark = Color(0xFF000000);
 
+const Color lfRefFunkyLight = Color(0xFFFEB5FF);
+const Color lfRefOnFunkyLight = Color(0xFF34374A);
+
+const Color lfRefFunkyDark = Color(0xFF755375);
+const Color lfRefOnFunkyDark = Color(0xFFE1E4F5);

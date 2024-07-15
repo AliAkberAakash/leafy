@@ -1,4 +1,6 @@
 import "package:flutter/material.dart";
+import "package:leafy/styles/theme/leafy_extension.dart";
+import "package:leafy/tokens/color/reference_tokens.dart";
 import "package:leafy/tokens/color/system_tokens_dark.dart";
 import "package:leafy/tokens/color/system_tokens_light.dart";
 
@@ -59,12 +61,19 @@ class LeafyTheme {
       surfaceContainer: lfSystemSurfaceContainerLight,
       surfaceContainerHigh: lfSystemSurfaceContainerHighLight,
       surfaceContainerHighest: lfSystemSurfaceContainerHighestLight,
-    )
-    ;
+    );
   }
 
   ThemeData light() {
-    return theme(lightScheme().toColorScheme());
+    return theme(
+      lightScheme().toColorScheme(),
+      extensions: [
+        LeafyColorExtension(
+          lfCustomFunky: lfRefFunkyLight,
+          lfCustomOnFunky: lfRefOnFunkyLight,
+        ),
+      ],
+    );
   }
 
   static MaterialScheme darkScheme() {
@@ -119,29 +128,37 @@ class LeafyTheme {
       surfaceContainer: lfSystemSurfaceContainerDark,
       surfaceContainerHigh: lfSystemSurfaceContainerHighDark,
       surfaceContainerHighest: lfSystemSurfaceContainerHighestDark,
-    )
-    ;
+    );
   }
 
   ThemeData dark() {
-    return theme(darkScheme().toColorScheme());
+    return theme(
+      darkScheme().toColorScheme(),
+      extensions: [
+        LeafyColorExtension(
+          lfCustomFunky: lfRefFunkyDark,
+          lfCustomOnFunky: lfRefOnFunkyDark,
+        ),
+      ],
+    );
   }
 
-  ThemeData theme(ColorScheme colorScheme) => ThemeData(
-    useMaterial3: true,
-    brightness: colorScheme.brightness,
-    colorScheme: colorScheme,
-    textTheme: textTheme.apply(
-      bodyColor: colorScheme.onSurface,
-      displayColor: colorScheme.onSurface,
-    ),
-    scaffoldBackgroundColor: colorScheme.background,
-    canvasColor: colorScheme.surface,
-  );
-
-
-  List<ExtendedColor> get extendedColors => [
-  ];
+  ThemeData theme(
+    ColorScheme colorScheme, {
+    List<ThemeExtension> extensions = const [],
+  }) =>
+      ThemeData(
+        useMaterial3: true,
+        brightness: colorScheme.brightness,
+        colorScheme: colorScheme,
+        textTheme: textTheme.apply(
+          bodyColor: colorScheme.onSurface,
+          displayColor: colorScheme.onSurface,
+        ),
+        scaffoldBackgroundColor: colorScheme.background,
+        canvasColor: colorScheme.surface,
+        extensions: extensions,
+      );
 }
 
 class MaterialScheme {
@@ -285,39 +302,4 @@ extension MaterialSchemeUtils on MaterialScheme {
       inversePrimary: inversePrimary,
     );
   }
-}
-
-class ExtendedColor {
-  final Color seed, value;
-  final ColorFamily light;
-  final ColorFamily lightHighContrast;
-  final ColorFamily lightMediumContrast;
-  final ColorFamily dark;
-  final ColorFamily darkHighContrast;
-  final ColorFamily darkMediumContrast;
-
-  const ExtendedColor({
-    required this.seed,
-    required this.value,
-    required this.light,
-    required this.lightHighContrast,
-    required this.lightMediumContrast,
-    required this.dark,
-    required this.darkHighContrast,
-    required this.darkMediumContrast,
-  });
-}
-
-class ColorFamily {
-  const ColorFamily({
-    required this.color,
-    required this.onColor,
-    required this.colorContainer,
-    required this.onColorContainer,
-  });
-
-  final Color color;
-  final Color onColor;
-  final Color colorContainer;
-  final Color onColorContainer;
 }
