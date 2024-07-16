@@ -12,10 +12,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    const theme = LeafyTheme(TextTheme());
+
     return MaterialApp(
       title: 'Leafy',
-      theme: const LeafyTheme(TextTheme()).light(),
-      darkTheme: const LeafyTheme(TextTheme()).dark(),
+      theme: theme.light(),
+      darkTheme: theme.dark(),
       home: const MyHomePage(title: 'Leafy'),
     );
   }
@@ -67,7 +69,8 @@ class _MyHomePageState extends State<MyHomePage> {
               color: leafyColorExtension.colors.lfCustomFunky,
               textColor: leafyColorExtension.colors.lfCustomOnFunky,
               child: Padding(
-                padding: EdgeInsets.all(leafyColorExtension.spacingTokens.lfSpacing8),
+                padding: EdgeInsets.all(
+                    leafyColorExtension.spacingTokens.lfSpacing8),
                 child: Text(
                   "Funky Button",
                   style: Theme.of(context).textTheme.headlineMedium,
