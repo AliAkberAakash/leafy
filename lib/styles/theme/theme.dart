@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:leafy/styles/theme/leafy_extension.dart";
+import "package:leafy/tokens/color/custom_color_extension.dart";
 import "package:leafy/tokens/color/reference_tokens.dart";
 import "package:leafy/tokens/color/system_tokens_dark.dart";
 import "package:leafy/tokens/color/system_tokens_light.dart";
@@ -69,8 +70,10 @@ class LeafyTheme {
       lightScheme().toColorScheme(),
       extensions: [
         LeafyColorExtension(
-          lfCustomFunky: lfRefFunkyLight,
-          lfCustomOnFunky: lfRefOnFunkyLight,
+          colors: CustomColorExtension(
+            lfCustomFunky: lfRefFunkyLight,
+            lfCustomOnFunky: lfRefOnFunkyLight,
+          ),
         ),
       ],
     );
@@ -136,8 +139,10 @@ class LeafyTheme {
       darkScheme().toColorScheme(),
       extensions: [
         LeafyColorExtension(
-          lfCustomFunky: lfRefFunkyDark,
-          lfCustomOnFunky: lfRefOnFunkyDark,
+          colors: CustomColorExtension(
+            lfCustomFunky: lfRefFunkyDark,
+            lfCustomOnFunky: lfRefOnFunkyDark,
+          ),
         ),
       ],
     );

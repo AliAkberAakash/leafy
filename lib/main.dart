@@ -63,9 +63,16 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 100,
             ),
             MaterialButton(
-              color: leafyColorExtension.lfCustomFunky,
-              textColor: leafyColorExtension.lfCustomOnFunky,
-              child: const Text("Funky Button"),
+              elevation: leafyColorExtension.elevationTokens.lfSysElevationLvl2,
+              color: leafyColorExtension.colors.lfCustomFunky,
+              textColor: leafyColorExtension.colors.lfCustomOnFunky,
+              child: Padding(
+                padding: EdgeInsets.all(leafyColorExtension.spacingTokens.lfSpacing8),
+                child: Text(
+                  "Funky Button",
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
+              ),
               onPressed: () {},
             ),
           ],

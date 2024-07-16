@@ -1,35 +1,47 @@
 import "package:flutter/material.dart";
+import "package:leafy/tokens/border_radius/border_radius_tokens.dart";
+import "package:leafy/tokens/border_width/border_width_tokens.dart";
+import "package:leafy/tokens/color/custom_color_extension.dart";
+import "package:leafy/tokens/elevation/elevation_tokens.dart";
+import "package:leafy/tokens/opacity/opacity_tokens.dart";
+import "package:leafy/tokens/spacing/spacing_tokens.dart";
 
 class LeafyColorExtension extends ThemeExtension<LeafyColorExtension> {
-  final Color lfCustomFunky;
-  final Color lfCustomOnFunky;
+  final CustomColorExtension colors;
+  late final ElevationTokens elevationTokens;
+  late final BorderRadiusTokens borderRadiusTokens;
+  late final BorderWidthTokens borderWidthTokens;
+  late final OpacityTokens opacityTokens;
+  late final SpacingTokens spacingTokens;
 
   LeafyColorExtension({
-    required this.lfCustomFunky,
-    required this.lfCustomOnFunky
-  });
+    required this.colors,
+  }) {
+    elevationTokens = ElevationTokens();
+    borderRadiusTokens = BorderRadiusTokens();
+    borderWidthTokens = BorderWidthTokens();
+    opacityTokens = OpacityTokens();
+    spacingTokens = SpacingTokens();
+  }
 
   @override
   LeafyColorExtension copyWith({
-    Color? lfCustomFunky,
-    Color? lfCustomOnFunky,
+    CustomColorExtension? colors,
   }) {
     return LeafyColorExtension(
-      lfCustomFunky: lfCustomFunky ?? this.lfCustomFunky,
-      lfCustomOnFunky: lfCustomOnFunky ?? this.lfCustomOnFunky,
+      colors: colors ?? this.colors,
     );
   }
 
   @override
-  LeafyColorExtension lerp(covariant ThemeExtension<LeafyColorExtension>? other,
-      double t) {
+  LeafyColorExtension lerp(
+      covariant ThemeExtension<LeafyColorExtension>? other, double t) {
     if (other is! LeafyColorExtension) {
       return this;
     }
 
     return LeafyColorExtension(
-      lfCustomFunky: Color.lerp(lfCustomFunky, other.lfCustomFunky, t)!,
-      lfCustomOnFunky: Color.lerp(lfCustomOnFunky, other.lfCustomOnFunky, t)!,
+      colors: colors.lerp(other.colors, t),
     );
   }
 }
