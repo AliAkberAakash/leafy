@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leafy/components/buttons/filled_button/lf_filled_button.dart';
 import 'package:leafy/styles/theme/theme.dart';
 import 'package:leafy/styles/util/extensions.dart';
 
@@ -9,11 +10,8 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    const theme = LeafyTheme(TextTheme());
-
     return MaterialApp(
       title: 'Leafy',
       theme: theme.light(),
@@ -33,13 +31,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,15 +45,40 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            LfFilledButton(
+              buttonText: "Leafy Filled Button",
+              onPressed: () {
+
+              },
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            SizedBox(
+              height: leafyColorExtension.spacingTokens.lfSpacing24,
             ),
-            const SizedBox(
-              height: 100,
+            const LfFilledButton(
+              buttonText: "Leafy Filled Button Disabled",
+            ),
+            SizedBox(
+              height: leafyColorExtension.spacingTokens.lfSpacing24,
+            ),
+            LfFilledButton(
+              leftIcon: Icons.add,
+              buttonText: "Leafy Filled Button with left Icon",
+              onPressed: () {
+
+              },
+            ),
+            SizedBox(
+              height: leafyColorExtension.spacingTokens.lfSpacing24,
+            ),
+            LfFilledButton(
+              rightIcon: Icons.add,
+              buttonText: "Leafy Filled Button with right Icon",
+              onPressed: () {
+
+              },
+            ),
+            SizedBox(
+              height: leafyColorExtension.spacingTokens.lfSpacing24,
             ),
             MaterialButton(
               elevation: leafyColorExtension.elevationTokens.lfSysElevationLvl2,
@@ -72,8 +88,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 padding: EdgeInsets.all(
                     leafyColorExtension.spacingTokens.lfSpacing8),
                 child: Text(
-                  "Funky Button",
-                  style: Theme.of(context).textTheme.headlineMedium,
+                  "Funky Colored Button",
+                  style: Theme.of(context).textTheme.labelSmall,
                 ),
               ),
               onPressed: () {},
@@ -82,8 +98,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
         tooltip: 'Increment',
+        onPressed: () {  },
         child: const Icon(Icons.add),
       ),
     );

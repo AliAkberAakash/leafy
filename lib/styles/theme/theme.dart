@@ -308,3 +308,5 @@ extension MaterialSchemeUtils on MaterialScheme {
     );
   }
 }
+
+const theme = LeafyTheme(TextTheme());
