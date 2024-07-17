@@ -20,20 +20,19 @@ class LfFilledButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final lfExtensions = context.themeExtension;
+    final theme = context.theme;
 
     return TextButton(
       style: ButtonStyle(
         shape: WidgetStatePropertyAll(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(
-              lfExtensions.borderRadiusTokens.lfBorderRadiusSmall,
+              theme.borderRadiusTokens.lfBorderRadiusSmall,
             ),
           ),
         ),
-        elevation: WidgetStatePropertyAll(
-            lfExtensions.elevationTokens.lfSysElevationLvl0),
+        elevation:
+            WidgetStatePropertyAll(theme.elevationTokens.lfSysElevationLvl0),
         backgroundColor:
             WidgetStatePropertyAll(theme.colorScheme.primaryContainer),
         textStyle: WidgetStatePropertyAll(
@@ -47,7 +46,7 @@ class LfFilledButton extends StatelessWidget {
           if (leftIcon != null)
             Icon(
               leftIcon,
-              size: lfExtensions.spacingTokens.lfSpacing20,
+              size: theme.spacingTokens.lfSpacing20,
             ),
           Text(
             buttonText,
@@ -55,8 +54,8 @@ class LfFilledButton extends StatelessWidget {
           if (rightIcon != null)
             Icon(
               rightIcon,
-              size: lfExtensions.spacingTokens.lfSpacing20,
-            )
+              size: theme.spacingTokens.lfSpacing20,
+            ),
         ],
       ),
     );

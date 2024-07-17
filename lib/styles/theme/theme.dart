@@ -1,6 +1,5 @@
 import "package:flutter/material.dart";
-import "package:leafy/styles/theme/leafy_extension.dart";
-import "package:leafy/tokens/color/custom_color_extension.dart";
+import "package:leafy/styles/leafy_extension.dart";
 import "package:leafy/tokens/color/reference_tokens.dart";
 import "package:leafy/tokens/color/system_tokens_dark.dart";
 import "package:leafy/tokens/color/system_tokens_light.dart";
@@ -10,8 +9,8 @@ class LeafyTheme {
 
   const LeafyTheme(this.textTheme);
 
-  static MaterialScheme lightScheme() {
-    return const MaterialScheme(
+  static LeafyScheme lightScheme() {
+    return const LeafyScheme(
       brightness: Brightness.light,
       primary: lfSystemPrimaryLight,
       surfaceTint: lfSystemPrimaryLight,
@@ -62,6 +61,8 @@ class LeafyTheme {
       surfaceContainer: lfSystemSurfaceContainerLight,
       surfaceContainerHigh: lfSystemSurfaceContainerHighLight,
       surfaceContainerHighest: lfSystemSurfaceContainerHighestLight,
+      funkyContainer: lfRefFunkyLight,
+      funkyOnContainer: lfRefOnFunkyLight,
     );
   }
 
@@ -69,18 +70,16 @@ class LeafyTheme {
     return theme(
       lightScheme().toColorScheme(),
       extensions: [
-        LeafyColorExtension(
-          colors: CustomColorExtension(
-            lfCustomFunky: lfRefFunkyLight,
-            lfCustomOnFunky: lfRefOnFunkyLight,
-          ),
+        LeafyExtension(
+          textTheme: textTheme,
+          colorScheme: LeafyTheme.lightScheme(),
         ),
       ],
     );
   }
 
-  static MaterialScheme darkScheme() {
-    return const MaterialScheme(
+  static LeafyScheme darkScheme() {
+    return const LeafyScheme(
       brightness: Brightness.dark,
       primary: lfSystemPrimaryDark,
       surfaceTint: lfSystemPrimaryDark,
@@ -131,6 +130,8 @@ class LeafyTheme {
       surfaceContainer: lfSystemSurfaceContainerDark,
       surfaceContainerHigh: lfSystemSurfaceContainerHighDark,
       surfaceContainerHighest: lfSystemSurfaceContainerHighestDark,
+      funkyContainer: lfRefFunkyDark,
+      funkyOnContainer: lfRefOnFunkyDark,
     );
   }
 
@@ -138,11 +139,9 @@ class LeafyTheme {
     return theme(
       darkScheme().toColorScheme(),
       extensions: [
-        LeafyColorExtension(
-          colors: CustomColorExtension(
-            lfCustomFunky: lfRefFunkyDark,
-            lfCustomOnFunky: lfRefOnFunkyDark,
-          ),
+        LeafyExtension(
+          textTheme: textTheme,
+          colorScheme: LeafyTheme.darkScheme(),
         ),
       ],
     );
@@ -166,8 +165,8 @@ class LeafyTheme {
       );
 }
 
-class MaterialScheme {
-  const MaterialScheme({
+class LeafyScheme {
+  const LeafyScheme({
     required this.brightness,
     required this.primary,
     required this.surfaceTint,
@@ -218,6 +217,8 @@ class MaterialScheme {
     required this.surfaceContainer,
     required this.surfaceContainerHigh,
     required this.surfaceContainerHighest,
+    required this.funkyContainer,
+    required this.funkyOnContainer,
   });
 
   final Brightness brightness;
@@ -270,9 +271,93 @@ class MaterialScheme {
   final Color surfaceContainer;
   final Color surfaceContainerHigh;
   final Color surfaceContainerHighest;
+  final Color funkyContainer;
+  final Color funkyOnContainer;
+
+  LeafyScheme lerp(covariant LeafyScheme? other, double t) {
+    if (other is! LeafyScheme) {
+      return this;
+    }
+
+    return LeafyScheme(
+      brightness: other.brightness,
+      primary: Color.lerp(primary, other.primary, t)!,
+      surfaceTint: Color.lerp(surfaceTint, other.surfaceTint, t)!,
+      onPrimary: Color.lerp(onPrimary, other.onPrimary, t)!,
+      primaryContainer:
+          Color.lerp(primaryContainer, other.primaryContainer, t)!,
+      onPrimaryContainer:
+          Color.lerp(onPrimaryContainer, other.onPrimaryContainer, t)!,
+      secondary: Color.lerp(secondary, other.secondary, t)!,
+      onSecondary: Color.lerp(onSecondary, other.onSecondary, t)!,
+      secondaryContainer:
+          Color.lerp(secondaryContainer, other.secondaryContainer, t)!,
+      onSecondaryContainer:
+          Color.lerp(onSecondaryContainer, other.onSecondaryContainer, t)!,
+      tertiary: Color.lerp(tertiary, other.tertiary, t)!,
+      onTertiary: Color.lerp(onTertiary, other.onTertiary, t)!,
+      tertiaryContainer:
+          Color.lerp(tertiaryContainer, other.tertiaryContainer, t)!,
+      onTertiaryContainer:
+          Color.lerp(onTertiaryContainer, other.onTertiaryContainer, t)!,
+      error: Color.lerp(error, other.error, t)!,
+      onError: Color.lerp(onError, other.onError, t)!,
+      errorContainer: Color.lerp(errorContainer, other.errorContainer, t)!,
+      onErrorContainer:
+          Color.lerp(onErrorContainer, other.onErrorContainer, t)!,
+      background: Color.lerp(background, other.background, t)!,
+      onBackground: Color.lerp(onBackground, other.onBackground, t)!,
+      surface: Color.lerp(surface, other.surface, t)!,
+      onSurface: Color.lerp(onSurface, other.onSurface, t)!,
+      surfaceVariant: Color.lerp(surfaceVariant, other.surfaceVariant, t)!,
+      onSurfaceVariant:
+          Color.lerp(onSurfaceVariant, other.onSurfaceVariant, t)!,
+      outline: Color.lerp(outline, other.outline, t)!,
+      outlineVariant: Color.lerp(outlineVariant, other.outlineVariant, t)!,
+      shadow: Color.lerp(shadow, other.shadow, t)!,
+      scrim: Color.lerp(scrim, other.scrim, t)!,
+      inverseSurface: Color.lerp(inverseSurface, other.inverseSurface, t)!,
+      inverseOnSurface:
+          Color.lerp(inverseOnSurface, other.inverseOnSurface, t)!,
+      inversePrimary: Color.lerp(inversePrimary, other.inversePrimary, t)!,
+      primaryFixed: Color.lerp(primaryFixed, other.primaryFixed, t)!,
+      onPrimaryFixed: Color.lerp(onPrimaryFixed, other.onPrimaryFixed, t)!,
+      primaryFixedDim: Color.lerp(primaryFixedDim, other.primaryFixedDim, t)!,
+      onPrimaryFixedVariant:
+          Color.lerp(onPrimaryFixedVariant, other.onPrimaryFixedVariant, t)!,
+      secondaryFixed: Color.lerp(secondaryFixed, other.secondaryFixed, t)!,
+      onSecondaryFixed:
+          Color.lerp(onSecondaryFixed, other.onSecondaryFixed, t)!,
+      secondaryFixedDim:
+          Color.lerp(secondaryFixedDim, other.secondaryFixedDim, t)!,
+      onSecondaryFixedVariant: Color.lerp(
+          onSecondaryFixedVariant, other.onSecondaryFixedVariant, t)!,
+      tertiaryFixed: Color.lerp(tertiaryFixed, other.tertiaryFixed, t)!,
+      onTertiaryFixed: Color.lerp(onTertiaryFixed, other.onTertiaryFixed, t)!,
+      tertiaryFixedDim:
+          Color.lerp(tertiaryFixedDim, other.tertiaryFixedDim, t)!,
+      onTertiaryFixedVariant:
+          Color.lerp(onTertiaryFixedVariant, other.onTertiaryFixedVariant, t)!,
+      surfaceDim: Color.lerp(surfaceDim, other.surfaceDim, t)!,
+      surfaceBright: Color.lerp(surfaceBright, other.surfaceBright, t)!,
+      surfaceContainerLowest:
+          Color.lerp(surfaceContainerLowest, other.surfaceContainerLowest, t)!,
+      surfaceContainerLow:
+          Color.lerp(surfaceContainerLow, other.surfaceContainerLow, t)!,
+      surfaceContainer:
+          Color.lerp(surfaceContainer, other.surfaceContainer, t)!,
+      surfaceContainerHigh:
+          Color.lerp(surfaceContainerHigh, other.surfaceContainerHigh, t)!,
+      surfaceContainerHighest: Color.lerp(
+          surfaceContainerHighest, other.surfaceContainerHighest, t)!,
+      funkyContainer: Color.lerp(funkyContainer, other.funkyContainer, t)!,
+      funkyOnContainer:
+          Color.lerp(funkyOnContainer, other.funkyOnContainer, t)!,
+    );
+  }
 }
 
-extension MaterialSchemeUtils on MaterialScheme {
+extension MaterialSchemeUtils on LeafyScheme {
   ColorScheme toColorScheme() {
     return ColorScheme(
       brightness: brightness,

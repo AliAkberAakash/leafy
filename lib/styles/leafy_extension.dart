@@ -1,21 +1,23 @@
 import "package:flutter/material.dart";
+import "package:leafy/styles/theme/theme.dart";
 import "package:leafy/tokens/border_radius/border_radius_tokens.dart";
 import "package:leafy/tokens/border_width/border_width_tokens.dart";
-import "package:leafy/tokens/color/custom_color_extension.dart";
 import "package:leafy/tokens/elevation/elevation_tokens.dart";
 import "package:leafy/tokens/opacity/opacity_tokens.dart";
 import "package:leafy/tokens/spacing/spacing_tokens.dart";
 
-class LeafyColorExtension extends ThemeExtension<LeafyColorExtension> {
-  final CustomColorExtension colors;
+class LeafyExtension extends ThemeExtension<LeafyExtension> {
+  final LeafyScheme colorScheme;
+  final TextTheme textTheme;
   late final ElevationTokens elevationTokens;
   late final BorderRadiusTokens borderRadiusTokens;
   late final BorderWidthTokens borderWidthTokens;
   late final OpacityTokens opacityTokens;
   late final SpacingTokens spacingTokens;
 
-  LeafyColorExtension({
-    required this.colors,
+  LeafyExtension({
+    required this.colorScheme,
+    required this.textTheme,
   }) {
     elevationTokens = ElevationTokens();
     borderRadiusTokens = BorderRadiusTokens();
@@ -25,23 +27,25 @@ class LeafyColorExtension extends ThemeExtension<LeafyColorExtension> {
   }
 
   @override
-  LeafyColorExtension copyWith({
-    CustomColorExtension? colors,
+  LeafyExtension copyWith({
+    LeafyScheme? colorScheme,
   }) {
-    return LeafyColorExtension(
-      colors: colors ?? this.colors,
+    return LeafyExtension(
+      textTheme: textTheme,
+      colorScheme: colorScheme ?? this.colorScheme,
     );
   }
 
   @override
-  LeafyColorExtension lerp(
-      covariant ThemeExtension<LeafyColorExtension>? other, double t) {
-    if (other is! LeafyColorExtension) {
+  LeafyExtension lerp(
+      covariant ThemeExtension<LeafyExtension>? other, double t) {
+    if (other is! LeafyExtension) {
       return this;
     }
 
-    return LeafyColorExtension(
-      colors: colors.lerp(other.colors, t),
+    return LeafyExtension(
+      textTheme: textTheme,
+      colorScheme: colorScheme.lerp(other.colorScheme, t),
     );
   }
 }

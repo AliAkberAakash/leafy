@@ -31,10 +31,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
-    final leafyColorExtension = context.themeExtension;
+    final theme = context.theme;
 
     return Scaffold(
       appBar: AppBar(
@@ -47,46 +46,39 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             LfFilledButton(
               buttonText: "Leafy Filled Button",
-              onPressed: () {
-
-              },
+              onPressed: () {},
             ),
             SizedBox(
-              height: leafyColorExtension.spacingTokens.lfSpacing24,
+              height: theme.spacingTokens.lfSpacing24,
             ),
             const LfFilledButton(
               buttonText: "Leafy Filled Button Disabled",
             ),
             SizedBox(
-              height: leafyColorExtension.spacingTokens.lfSpacing24,
+              height: theme.spacingTokens.lfSpacing24,
             ),
             LfFilledButton(
               leftIcon: Icons.add,
               buttonText: "Leafy Filled Button with left Icon",
-              onPressed: () {
-
-              },
+              onPressed: () {},
             ),
             SizedBox(
-              height: leafyColorExtension.spacingTokens.lfSpacing24,
+              height: theme.spacingTokens.lfSpacing24,
             ),
             LfFilledButton(
               rightIcon: Icons.add,
               buttonText: "Leafy Filled Button with right Icon",
-              onPressed: () {
-
-              },
+              onPressed: () {},
             ),
             SizedBox(
-              height: leafyColorExtension.spacingTokens.lfSpacing24,
+              height: theme.spacingTokens.lfSpacing24,
             ),
             MaterialButton(
-              elevation: leafyColorExtension.elevationTokens.lfSysElevationLvl2,
-              color: leafyColorExtension.colors.lfCustomFunky,
-              textColor: leafyColorExtension.colors.lfCustomOnFunky,
+              elevation: theme.elevationTokens.lfSysElevationLvl2,
+              color: theme.colorScheme.funkyContainer,
+              textColor: theme.colorScheme.funkyOnContainer,
               child: Padding(
-                padding: EdgeInsets.all(
-                    leafyColorExtension.spacingTokens.lfSpacing8),
+                padding: EdgeInsets.all(theme.spacingTokens.lfSpacing8),
                 child: Text(
                   "Funky Colored Button",
                   style: Theme.of(context).textTheme.labelSmall,
@@ -99,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         tooltip: 'Increment',
-        onPressed: () {  },
+        onPressed: () {},
         child: const Icon(Icons.add),
       ),
     );
