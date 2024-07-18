@@ -3,6 +3,7 @@ import "package:leafy/styles/theme/theme.dart";
 import "package:leafy/tokens/border_radius/border_radius_tokens.dart";
 import "package:leafy/tokens/border_width/border_width_tokens.dart";
 import "package:leafy/tokens/elevation/elevation_tokens.dart";
+import "package:leafy/tokens/icon_size/icon_size_tokens.dart";
 import "package:leafy/tokens/opacity/opacity_tokens.dart";
 import "package:leafy/tokens/spacing/spacing_tokens.dart";
 
@@ -14,6 +15,7 @@ class LeafyExtension extends ThemeExtension<LeafyExtension> {
   late final BorderWidthTokens borderWidthTokens;
   late final OpacityTokens opacityTokens;
   late final SpacingTokens spacingTokens;
+  late final IconSizeTokens iconSizeTokens;
 
   LeafyExtension({
     required this.colorScheme,
@@ -24,6 +26,7 @@ class LeafyExtension extends ThemeExtension<LeafyExtension> {
     borderWidthTokens = BorderWidthTokens();
     opacityTokens = OpacityTokens();
     spacingTokens = SpacingTokens();
+    iconSizeTokens = IconSizeTokens();
   }
 
   @override

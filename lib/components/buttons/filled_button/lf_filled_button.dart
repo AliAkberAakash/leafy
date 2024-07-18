@@ -22,40 +22,43 @@ class LfFilledButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = context.theme;
 
-    return TextButton(
-      style: ButtonStyle(
-        shape: WidgetStatePropertyAll(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(
-              theme.borderRadiusTokens.lfBorderRadiusSmall,
+    return FilledButton(
+      style: FilledButton.styleFrom(
+        backgroundColor: theme.colorScheme.primaryContainer,
+        foregroundColor: theme.colorScheme.onPrimaryContainer,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(
+              theme.borderRadiusTokens.lfBorderRadiusMedium,
             ),
           ),
-        ),
-        elevation:
-            WidgetStatePropertyAll(theme.elevationTokens.lfSysElevationLvl0),
-        backgroundColor:
-            WidgetStatePropertyAll(theme.colorScheme.primaryContainer),
-        textStyle: WidgetStatePropertyAll(
-          theme.textTheme.labelSmall,
         ),
       ),
       onPressed: onPressed,
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (leftIcon != null)
+          if (leftIcon != null) ...[
             Icon(
               leftIcon,
-              size: theme.spacingTokens.lfSpacing20,
+              size: theme.iconSizeTokens.small,
             ),
+            SizedBox(
+              width: theme.spacingTokens.lfSpacing8,
+            ),
+          ],
           Text(
             buttonText,
           ),
-          if (rightIcon != null)
+          if (rightIcon != null) ...[
+            SizedBox(
+              width: theme.spacingTokens.lfSpacing8,
+            ),
             Icon(
               rightIcon,
-              size: theme.spacingTokens.lfSpacing20,
+              size: theme.iconSizeTokens.small,
             ),
+          ],
         ],
       ),
     );
