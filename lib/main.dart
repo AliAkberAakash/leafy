@@ -45,21 +45,21 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             LfFilledButton(
-              buttonText: "Leafy Filled Button",
+              label: "Leafy Filled Button",
               onPressed: () {},
             ),
             SizedBox(
               height: theme.spacingTokens.lfSpacing24,
             ),
             const LfFilledButton(
-              buttonText: "Leafy Filled Button Disabled",
+              label: "Leafy Filled Button Disabled",
             ),
             SizedBox(
               height: theme.spacingTokens.lfSpacing24,
             ),
             LfFilledButton(
               leftIcon: Icons.add,
-              buttonText: "Leafy Filled Button with left Icon",
+              label: "Leafy Filled Button with left Icon",
               onPressed: () {},
             ),
             SizedBox(
@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             LfFilledButton(
               rightIcon: Icons.add,
-              buttonText: "Leafy Filled Button with right Icon",
+              label: "Leafy Filled Button with right Icon",
               onPressed: () {},
             ),
             SizedBox(

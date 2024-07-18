@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:leafy/styles/util/extensions.dart';
 
 class LfFilledButton extends StatelessWidget {
-  final String buttonText;
+  final String label;
   final void Function()? onPressed;
   final IconData? leftIcon;
   final IconData? rightIcon;
 
   const LfFilledButton({
     super.key,
-    required this.buttonText,
+    required this.label,
     this.onPressed,
     this.leftIcon,
     this.rightIcon,
@@ -48,7 +48,7 @@ class LfFilledButton extends StatelessWidget {
             ),
           ],
           Text(
-            buttonText,
+            label,
           ),
           if (rightIcon != null) ...[
             SizedBox(
