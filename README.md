@@ -18,8 +18,18 @@ Currently, the project includes:
 - [x]  Icon
 - [x]  IocnSize
 
+### Themes:
+- [x]  Dark Theme
+- [x]  Light Theme
 
-I'll be gradually adding different components.
+### Components:
+- [x]  Buttons
+  - [x]  Filled Buttons
+  - [ ]  Elevated Buttons
+  - [ ]  Outlined Buttons
+  - [ ]  Text Buttons
+     
+I'll be gradually adding more components.
 
 ## Contributions
 If you want to work on it, check the issues and ask to be assigned!
