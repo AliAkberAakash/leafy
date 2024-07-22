@@ -2,12 +2,13 @@ import 'package:example/core/screen/component_screen.dart';
 import 'package:example/core/screen/screen_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:leafy/styles/util/extensions.dart';
-import 'package:leafy/components/buttons/filled_button/lf_filled_button.dart';
+import 'package:leafy/components/buttons/outlined_button/lf_outlined_button.dart';
 
-class FilledButtonScreen extends StatelessWidget with ScreenWidget {
+
+class OutlinedButtonScreen extends StatelessWidget with ScreenWidget {
   final String title;
 
-  const FilledButtonScreen({
+  const OutlinedButtonScreen({
     super.key,
     required this.title,
   });
@@ -22,20 +23,20 @@ class FilledButtonScreen extends StatelessWidget with ScreenWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            LfFilledButton(
+            LfOutlinedButton(
               label: "Leafy Filled Button",
               onPressed: () {},
             ),
             SizedBox(
               height: theme.spacingTokens.lfSpacing24,
             ),
-            const LfFilledButton(
+            const LfOutlinedButton(
               label: "Leafy Filled Button Disabled",
             ),
             SizedBox(
               height: theme.spacingTokens.lfSpacing24,
             ),
-            LfFilledButton(
+            LfOutlinedButton(
               leftIcon: Icons.add,
               label: "Leafy Filled Button with left Icon",
               onPressed: () {},
@@ -43,7 +44,7 @@ class FilledButtonScreen extends StatelessWidget with ScreenWidget {
             SizedBox(
               height: theme.spacingTokens.lfSpacing24,
             ),
-            LfFilledButton(
+            LfOutlinedButton(
               rightIcon: Icons.add,
               label: "Leafy Filled Button with right Icon",
               onPressed: () {},
@@ -51,10 +52,10 @@ class FilledButtonScreen extends StatelessWidget with ScreenWidget {
             SizedBox(
               height: theme.spacingTokens.lfSpacing24,
             ),
-            MaterialButton(
-              elevation: theme.elevationTokens.lfSysElevationLvl2,
-              color: theme.colorScheme.funkyContainer,
-              textColor: theme.colorScheme.funkyOnContainer,
+            OutlinedButton(
+              style: OutlinedButton.styleFrom(
+                foregroundColor: theme.colorScheme.funkyContainer,
+              ),
               child: Padding(
                 padding: EdgeInsets.all(theme.spacingTokens.lfSpacing8),
                 child: Text(

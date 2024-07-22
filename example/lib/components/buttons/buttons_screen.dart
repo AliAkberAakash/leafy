@@ -1,4 +1,5 @@
 import 'package:example/components/buttons/filled_button_screen.dart';
+import 'package:example/components/buttons/outlined_button_screen.dart';
 import 'package:example/core/model/component_data.dart';
 import 'package:example/core/screen/list_screen.dart';
 import 'package:example/core/screen/screen_widget.dart';
@@ -17,6 +18,12 @@ class ButtonsScreen extends StatelessWidget with ScreenWidget {
             "Filled Button",
             const FilledButtonScreen(
               title: "Filled Button",
+            ),
+          ),
+          ComponentData(
+            "Outlined Button",
+            const OutlinedButtonScreen(
+              title: "Outlined Button",
             ),
           ),
         ],
