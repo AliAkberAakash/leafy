@@ -58,7 +58,7 @@ class FilledButtonScreen extends StatelessWidget with ScreenWidget {
               child: Padding(
                 padding: EdgeInsets.all(theme.spacingTokens.lfSpacing8),
                 child: Text(
-                  "Custom Button",
+                  "Custom Filled Button",
                   style: Theme.of(context).textTheme.labelSmall,
                 ),
               ),

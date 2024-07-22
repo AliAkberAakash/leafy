@@ -24,21 +24,21 @@ class OutlinedButtonScreen extends StatelessWidget with ScreenWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             LfOutlinedButton(
-              label: "Leafy Filled Button",
+              label: "Leafy Outlined Button",
               onPressed: () {},
             ),
             SizedBox(
               height: theme.spacingTokens.lfSpacing24,
             ),
             const LfOutlinedButton(
-              label: "Leafy Filled Button Disabled",
+              label: "Leafy Outlined Button Disabled",
             ),
             SizedBox(
               height: theme.spacingTokens.lfSpacing24,
             ),
             LfOutlinedButton(
               leftIcon: Icons.add,
-              label: "Leafy Filled Button with left Icon",
+              label: "Leafy Outlined Button with left Icon",
               onPressed: () {},
             ),
             SizedBox(
@@ -46,7 +46,7 @@ class OutlinedButtonScreen extends StatelessWidget with ScreenWidget {
             ),
             LfOutlinedButton(
               rightIcon: Icons.add,
-              label: "Leafy Filled Button with right Icon",
+              label: "Leafy Outlined Button with right Icon",
               onPressed: () {},
             ),
             SizedBox(
@@ -59,7 +59,7 @@ class OutlinedButtonScreen extends StatelessWidget with ScreenWidget {
               child: Padding(
                 padding: EdgeInsets.all(theme.spacingTokens.lfSpacing8),
                 child: Text(
-                  "Custom Button",
+                  "Custom Outlined Button",
                   style: Theme.of(context).textTheme.labelSmall,
                 ),
               ),
