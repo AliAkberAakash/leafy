@@ -8,10 +8,10 @@ class LfOutlinedButton extends StatelessWidget {
     this.onPressed,
     this.leftIcon,
     this.rightIcon,
-  }) :  assert(
-  !(leftIcon != null && rightIcon != null),
-  "You can not add both leftIcon and rightIcon property at the same time",
-  );
+  }) : assert(
+          !(leftIcon != null && rightIcon != null),
+          "You can not add both leftIcon and rightIcon property at the same time",
+        );
 
   final String label;
   final void Function()? onPressed;
@@ -25,6 +25,9 @@ class LfOutlinedButton extends StatelessWidget {
     return OutlinedButton(
       style: OutlinedButton.styleFrom(
         foregroundColor: theme.colorScheme.primary,
+        side: BorderSide(
+          color: theme.colorScheme.outline,
+        ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
             Radius.circular(
