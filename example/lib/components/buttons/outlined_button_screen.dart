@@ -1,6 +1,7 @@
 import 'package:example/core/screen/component_screen.dart';
 import 'package:example/core/screen/screen_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:leafy/components/icons/leafy_icons.dart';
 import 'package:leafy/styles/util/extensions.dart';
 import 'package:leafy/components/buttons/outlined_button/lf_outlined_button.dart';
 
@@ -37,7 +38,7 @@ class OutlinedButtonScreen extends StatelessWidget with ScreenWidget {
               height: theme.spacingTokens.lfSpacing24,
             ),
             LfOutlinedButton(
-              leftIcon: Icons.add,
+              leftIcon: LeafyIcons.plus,
               label: "Leafy Outlined Button with left Icon",
               onPressed: () {},
             ),
@@ -45,7 +46,7 @@ class OutlinedButtonScreen extends StatelessWidget with ScreenWidget {
               height: theme.spacingTokens.lfSpacing24,
             ),
             LfOutlinedButton(
-              rightIcon: Icons.add,
+              rightIcon: LeafyIcons.plus,
               label: "Leafy Outlined Button with right Icon",
               onPressed: () {},
             ),

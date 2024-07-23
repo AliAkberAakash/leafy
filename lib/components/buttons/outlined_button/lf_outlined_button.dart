@@ -43,7 +43,7 @@ class LfOutlinedButton extends StatelessWidget {
           if (leftIcon != null) ...[
             Icon(
               leftIcon,
-              size: theme.iconSizeTokens.small,
+              size: theme.iconSizeTokens.xSmall,
             ),
             SizedBox(
               width: theme.spacingTokens.lfSpacing8,
@@ -58,7 +58,7 @@ class LfOutlinedButton extends StatelessWidget {
             ),
             Icon(
               rightIcon,
-              size: theme.iconSizeTokens.small,
+              size: theme.iconSizeTokens.xSmall,
             ),
           ],
         ],
