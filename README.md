@@ -26,7 +26,7 @@ Currently, the project includes:
 - [x]  Buttons
   - [x]  Filled Buttons
   - [ ]  Elevated Buttons
-  - [ ]  Outlined Buttons
+  - [x]  Outlined Buttons
   - [ ]  Text Buttons
      
 I'll be gradually adding more components.
