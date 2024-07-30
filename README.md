@@ -15,7 +15,6 @@ A design system on top of Material Theme
 Currently, the project includes:
 ### Tokens:
 - [x]  Color
-- [x]  Typography
 - [x]  Spacing
 - [x]  Elevation
 - [x]  Opacity
@@ -23,6 +22,7 @@ Currently, the project includes:
 - [x]  Border Size
 - [x]  Icon
 - [x]  IocnSize
+- [ ]  Typography
 
 ### Themes:
 - [x]  Dark Theme
