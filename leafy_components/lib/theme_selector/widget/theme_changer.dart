@@ -22,22 +22,22 @@ class ThemeChanger extends StatelessWidget {
     return AppBarMenu(
       menuData: [
         AppBarMenuModel(
-          "Light",
-          () {
+          title: "Light",
+          onClick: () {
             themeBloc.add(LightThemeEvent());
           },
           iconData: LeafyIcons.sun,
         ),
         AppBarMenuModel(
-          "Dark",
-          () {
+          title: "Dark",
+          onClick: () {
             themeBloc.add(DarkThemeEvent());
           },
           iconData: LeafyIcons.moon,
         ),
         AppBarMenuModel(
-          "System",
-          () {
+          title: "System",
+          onClick: () {
             themeBloc.add(SystemThemeEvent());
           },
           iconData: LeafyIcons.server,

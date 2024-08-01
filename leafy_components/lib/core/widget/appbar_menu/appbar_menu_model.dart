@@ -5,9 +5,9 @@ class AppBarMenuModel {
   VoidCallback onClick;
   IconData? iconData;
 
-  AppBarMenuModel(
-    this.title,
-    this.onClick, {
+  AppBarMenuModel({
+    required this.title,
+    required this.onClick,
     this.iconData,
   });
 }
