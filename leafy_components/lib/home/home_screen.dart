@@ -1,4 +1,5 @@
 import 'package:example/components/buttons/buttons_screen.dart';
+import 'package:example/components/dropdown_menu/dropdown_menu_screen.dart';
 import 'package:example/core/model/component_data.dart';
 import 'package:example/core/screen/component_screen.dart';
 import 'package:example/core/screen/list_screen.dart';
@@ -39,6 +40,10 @@ class HomeScreen extends StatelessWidget {
           ComponentData(
             context.localizations.button,
             const ButtonsScreen(),
+          ),
+          ComponentData(
+            context.localizations.dropdownMenu,
+            const DropdownMenuScreen(),
           ),
         ],
       ),

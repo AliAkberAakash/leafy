@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:leafy/components/lf_dropdown_menu/lf_drop_down_menu_model.dart';
+import 'package:leafy/components/lf_dropdown_menu/lf_drop_down_icon_menu/lf_drop_down_menu_model.dart';
 import 'package:leafy/styles/util/extensions.dart';
 
-class LfDropDownMenuWidget extends StatelessWidget {
+class LfDropDownIconMenuWidget extends StatelessWidget {
   final List<LfDropDownMenuModel> menuData;
   final IconData menuIcon;
 
-  const LfDropDownMenuWidget({
+  const LfDropDownIconMenuWidget({
     super.key,
     required this.menuData,
     required this.menuIcon,

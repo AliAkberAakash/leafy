@@ -4,8 +4,8 @@ import 'package:example/theme_selector/bloc/theme_bloc.dart';
 import 'package:example/theme_selector/bloc/theme_event.dart';
 import 'package:flutter/material.dart';
 import 'package:leafy/components/icons/leafy_icons.dart';
-import 'package:leafy/components/lf_dropdown_menu/lf_drop_down_menu_model.dart';
-import 'package:leafy/components/lf_dropdown_menu/lf_drop_down_menu_widget.dart';
+import 'package:leafy/components/lf_dropdown_menu/lf_drop_down_icon_menu/lf_drop_down_menu_model.dart';
+import 'package:leafy/components/lf_dropdown_menu/lf_drop_down_icon_menu/lf_drop_down_icon_menu_widget.dart';
 import 'package:leafy/styles/leafy_extension.dart';
 
 class ThemeChangerWidget extends StatelessWidget {
@@ -20,7 +20,7 @@ class ThemeChangerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LfDropDownMenuWidget(
+    return LfDropDownIconMenuWidget(
       menuData: [
         LfDropDownMenuModel(
           title: context.localizations.light,
