@@ -1,3 +1,4 @@
+import 'package:example/extensions/extensions.dart';
 import 'package:example/home/home_screen.dart';
 import 'package:example/locale_selector/bloc/locale_cubit.dart';
 import 'package:example/theme_selector/bloc/theme_bloc.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
             title: 'Leafy',
             theme: theme.light(),
             darkTheme: theme.dark(),
-            themeMode: _getThemeMode(themeState),
+            themeMode: themeState.themeMode,
             debugShowCheckedModeBanner: false,
             home: const HomeScreen(),
             locale: Locale(localeCode),
@@ -47,16 +48,5 @@ class MyApp extends StatelessWidget {
         },
       ),
     );
-  }
-
-  ThemeMode _getThemeMode(ThemeState state) {
-    if (state is LightThemeState) {
-      return ThemeMode.light;
-    }
-    if (state is DarkThemeState) {
-      return ThemeMode.dark;
-    }
-
-    return ThemeMode.system;
   }
 }
