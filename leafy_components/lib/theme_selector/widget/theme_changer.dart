@@ -1,6 +1,7 @@
 import 'package:example/core/widget/appbar_menu/appbar_icon_menu.dart';
 import 'package:example/core/widget/appbar_menu/appbar_menu_model.dart';
 import 'package:example/di/di.dart';
+import 'package:example/extensions/extensions.dart';
 import 'package:example/theme_selector/bloc/theme_bloc.dart';
 import 'package:example/theme_selector/bloc/theme_event.dart';
 import 'package:flutter/material.dart';
@@ -22,21 +23,21 @@ class ThemeChanger extends StatelessWidget {
     return AppBarMenu(
       menuData: [
         AppBarMenuModel(
-          title: "Light",
+          title: context.localizations.light,
           onClick: () {
             themeBloc.add(LightThemeEvent());
           },
           iconData: LeafyIcons.sun,
         ),
         AppBarMenuModel(
-          title: "Dark",
+          title: context.localizations.dark,
           onClick: () {
             themeBloc.add(DarkThemeEvent());
           },
           iconData: LeafyIcons.moon,
         ),
         AppBarMenuModel(
-          title: "System",
+          title: context.localizations.system,
           onClick: () {
             themeBloc.add(SystemThemeEvent());
           },

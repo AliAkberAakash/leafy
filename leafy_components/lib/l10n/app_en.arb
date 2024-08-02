@@ -1,0 +1,9 @@
+{
+  "home": "Home",
+  "@home": {
+    "description": "Describes the home screen"
+  },
+  "light": "Light",
+  "dark": "Dark",
+  "system": "System"
+}
