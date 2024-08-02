@@ -1,4 +1,5 @@
 import 'package:example/home/home_screen.dart';
+import 'package:example/locale_selector/bloc/locale_cubit.dart';
 import 'package:example/theme_selector/bloc/theme_bloc.dart';
 import 'package:example/theme_selector/bloc/theme_state.dart';
 import 'package:flutter/material.dart';
@@ -18,20 +19,34 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ThemeBloc, ThemeState>(
-        bloc: getIt.get(),
-        builder: (ctx, state) {
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<ThemeBloc>(
+          create: (context) => getIt<ThemeBloc>(),
+        ),
+        BlocProvider<LocaleCubit>(
+          create: (context) => getIt<LocaleCubit>(),
+        ),
+      ],
+      child: Builder(
+        builder: (context) {
+          final themeState = context.watch<ThemeBloc>().state;
+          final localeCode = context.watch<LocaleCubit>().state;
+
           return MaterialApp(
             title: 'Leafy',
             theme: theme.light(),
             darkTheme: theme.dark(),
-            themeMode: _getThemeMode(state),
+            themeMode: _getThemeMode(themeState),
             debugShowCheckedModeBanner: false,
             home: const HomeScreen(),
+            locale: Locale(localeCode),
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
           );
-        });
+        },
+      ),
+    );
   }
 
   ThemeMode _getThemeMode(ThemeState state) {
