@@ -1,8 +1,6 @@
-import 'package:example/extensions/extensions.dart';
 import 'package:example/home/home_screen.dart';
 import 'package:example/locale_selector/bloc/locale_cubit.dart';
 import 'package:example/theme_selector/bloc/theme_bloc.dart';
-import 'package:example/theme_selector/bloc/theme_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
