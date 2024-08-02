@@ -4,7 +4,7 @@ import 'package:example/core/screen/component_screen.dart';
 import 'package:example/core/screen/list_screen.dart';
 import 'package:example/extensions/extensions.dart';
 import 'package:example/locale_selector/widget/locale_changer_widget.dart';
-import 'package:example/theme_selector/widget/theme_changer.dart';
+import 'package:example/theme_selector/widget/theme_changer_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:leafy/styles/util/extensions.dart';
 
@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
         title: Text(localizations.home),
         actions: [
           LocaleChangerWidget(),
-          ThemeChanger(
+          ThemeChangerWidget(
             theme: theme,
           ),
         ],

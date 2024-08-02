@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class AppBarMenuModel {
+class LfDropDownMenuModel {
   String title;
   VoidCallback onClick;
   IconData? iconData;
 
-  AppBarMenuModel({
+  LfDropDownMenuModel({
     required this.title,
     required this.onClick,
     this.iconData,
