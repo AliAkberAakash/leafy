@@ -30,14 +30,14 @@ class HomeScreen extends StatelessWidget {
       body: ListScreen(
         data: [
           ComponentData(
-            "AppBars",
-            const ComponentScreen(
-              title: "AppBars",
-              body: Placeholder(),
+            context.localizations.appbar,
+            ComponentScreen(
+              title: context.localizations.appbar,
+              body: const Placeholder(),
             ),
           ),
           ComponentData(
-            "Buttons",
+            context.localizations.button,
             const ButtonsScreen(),
           ),
         ],

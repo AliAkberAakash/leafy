@@ -5,5 +5,10 @@
   },
   "light": "Light",
   "dark": "Dark",
-  "system": "System"
+  "system": "System",
+  "appbar": "App Bar",
+  "button": "Button",
+  "filledButton": "Filled Button",
+  "outlinedButton": "Outlined Button",
+  "dropdownMenu": "Dropdown Menu"
 }

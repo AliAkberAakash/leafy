@@ -3,6 +3,7 @@ import 'package:example/components/buttons/outlined_button_screen.dart';
 import 'package:example/core/model/component_data.dart';
 import 'package:example/core/screen/list_screen.dart';
 import 'package:example/core/screen/screen_widget.dart';
+import 'package:example/extensions/extensions.dart';
 import 'package:flutter/material.dart';
 
 class ButtonsScreen extends StatelessWidget with ScreenWidget {
@@ -15,15 +16,15 @@ class ButtonsScreen extends StatelessWidget with ScreenWidget {
       body: ListScreen(
         data: [
           ComponentData(
-            "Filled Button",
-            const FilledButtonScreen(
-              title: "Filled Button",
+            context.localizations.filledButton,
+            FilledButtonScreen(
+              title: context.localizations.filledButton,
             ),
           ),
           ComponentData(
-            "Outlined Button",
-            const OutlinedButtonScreen(
-              title: "Outlined Button",
+            context.localizations.outlinedButton,
+            OutlinedButtonScreen(
+              title: context.localizations.filledButton,
             ),
           ),
         ],
