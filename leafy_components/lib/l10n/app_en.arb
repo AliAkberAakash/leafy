@@ -10,5 +10,7 @@
   "button": "Button",
   "filledButton": "Filled Button",
   "outlinedButton": "Outlined Button",
-  "dropdownMenu": "Dropdown Menu"
+  "dropdownMenu": "Dropdown Menu",
+  "typography": "Typography",
+  "helloFromLeafy": "Hello from Leafy!"
 }
