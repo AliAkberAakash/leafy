@@ -3,6 +3,7 @@ import "package:leafy/styles/leafy_extension.dart";
 import "package:leafy/tokens/color/reference_tokens.dart";
 import "package:leafy/tokens/color/system_tokens_dark.dart";
 import "package:leafy/tokens/color/system_tokens_light.dart";
+import "package:leafy/tokens/typography/leafy_text_theme.dart";
 
 class LeafyTheme {
   final TextTheme textTheme;
@@ -394,4 +395,6 @@ extension MaterialSchemeUtils on LeafyScheme {
   }
 }
 
-const theme = LeafyTheme(TextTheme());
+const theme = LeafyTheme(
+  LeafyTextTheme.leafyTextTheme,
+);

@@ -18,7 +18,7 @@ class ComponentTile extends StatelessWidget {
     return ListTile(
       title: Text(
         title,
-        style: theme.textTheme.labelMedium,
+        style: theme.textTheme.bodyMedium,
       ),
       onTap: onTap,
     );
