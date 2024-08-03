@@ -62,8 +62,13 @@ flutter:
   fonts:
     - family: LeafyIcons
       fonts:
-        - asset: packages/leafy/fonts/LeafyIcons.ttf
-
+        - asset: packages/leafy/fonts/icons/LeafyIcons.ttf
+    - family: Lato
+      fonts:
+        - asset: packages/leafy/fonts/lato/lato_regular.ttf
+          weight: 400
+        - asset: packages/leafy/fonts/lato/lato_bold.ttf
+          weight: 500
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
