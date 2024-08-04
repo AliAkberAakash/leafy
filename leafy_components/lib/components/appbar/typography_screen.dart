@@ -15,66 +15,82 @@ class TypographyScreen extends StatelessWidget with ScreenWidget {
         children: [
           Text(
             context.localizations.helloFromLeafy,
-            style: theme.textTheme.displayLarge,
-          ),
-          Text(
-            context.localizations.helloFromLeafy,
-            style: theme.textTheme.displayMedium,
-          ),
-          Text(
-            context.localizations.helloFromLeafy,
-            style: theme.textTheme.displaySmall,
-          ),
-          Text(
-            context.localizations.helloFromLeafy,
-            style: theme.textTheme.headlineLarge,
-          ),
-          Text(
-            context.localizations.helloFromLeafy,
-            style: theme.textTheme.headlineMedium,
-          ),
-          Text(
-            context.localizations.helloFromLeafy,
-            style: theme.textTheme.headlineSmall,
-          ),
-          Text(
-            context.localizations.helloFromLeafy,
-            style: theme.textTheme.titleLarge,
-          ),
-          Text(
-            context.localizations.helloFromLeafy,
-            style: theme.textTheme.titleMedium,
-          ),
-          Text(
-            context.localizations.helloFromLeafy,
-            style: theme.textTheme.titleSmall,
-          ),
-          Text(
-            context.localizations.helloFromLeafy,
-            style: theme.textTheme.labelLarge,
-          ),
-          Text(
-            context.localizations.helloFromLeafy,
-            style: theme.textTheme.labelMedium,
-          ),
-          Text(
-            context.localizations.helloFromLeafy,
-            style: theme.textTheme.labelSmall,
-          ),
-          Text(
-            context.localizations.helloFromLeafy,
-            style: theme.textTheme.bodyLarge,
+            style: theme.textTheme.bodySmall,
+            textAlign: TextAlign.center,
           ),
           Text(
             context.localizations.helloFromLeafy,
             style: theme.textTheme.bodyMedium,
+            textAlign: TextAlign.center,
           ),
           Text(
             context.localizations.helloFromLeafy,
-            style: theme.textTheme.bodySmall,
+            style: theme.textTheme.bodyLarge,
+            textAlign: TextAlign.center,
+          ),
+          Text(
+            context.localizations.helloFromLeafy,
+            style: theme.textTheme.labelSmall,
+            textAlign: TextAlign.center,
+          ),
+          Text(
+            context.localizations.helloFromLeafy,
+            style: theme.textTheme.labelMedium,
+            textAlign: TextAlign.center,
+          ),
+          Text(
+            context.localizations.helloFromLeafy,
+            style: theme.textTheme.labelLarge,
+            textAlign: TextAlign.center,
+          ),
+          Text(
+            context.localizations.helloFromLeafy,
+            style: theme.textTheme.titleSmall,
+            textAlign: TextAlign.center,
+          ),
+          Text(
+            context.localizations.helloFromLeafy,
+            style: theme.textTheme.titleMedium,
+            textAlign: TextAlign.center,
+          ),
+          Text(
+            context.localizations.helloFromLeafy,
+            style: theme.textTheme.titleLarge,
+            textAlign: TextAlign.center,
+          ),
+          Text(
+            context.localizations.helloFromLeafy,
+            style: theme.textTheme.headlineSmall,
+            textAlign: TextAlign.center,
+          ),
+          Text(
+            context.localizations.helloFromLeafy,
+            style: theme.textTheme.headlineMedium,
+            textAlign: TextAlign.center,
+          ),
+          Text(
+            context.localizations.helloFromLeafy,
+            style: theme.textTheme.headlineLarge,
+            textAlign: TextAlign.center,
+          ),
+          Text(
+            context.localizations.helloFromLeafy,
+            style: theme.textTheme.displaySmall,
+            textAlign: TextAlign.center,
+          ),
+          Text(
+            context.localizations.helloFromLeafy,
+            style: theme.textTheme.displayMedium,
+            textAlign: TextAlign.center,
+          ),
+          Text(
+            context.localizations.helloFromLeafy,
+            style: theme.textTheme.displayLarge,
+            textAlign: TextAlign.center,
           ),
         ],
       ),
     );
+
   }
 }
