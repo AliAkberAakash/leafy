@@ -32,12 +32,12 @@ class HomeScreen extends StatelessWidget {
       body: ListScreen(
         data: [
           ComponentData(
-            context.localizations.button,
-            const ButtonsScreen(),
-          ),
-          ComponentData(
             context.localizations.appbarDropdownMenu,
             const AppBarDropdownMenuScreen(),
+          ),
+          ComponentData(
+            context.localizations.button,
+            const ButtonsScreen(),
           ),
           ComponentData(
             context.localizations.typography,
