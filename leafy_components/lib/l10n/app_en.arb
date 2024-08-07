@@ -11,6 +11,16 @@
   "filledButton": "Filled Button",
   "outlinedButton": "Outlined Button",
   "dropdownMenu": "Dropdown Menu",
+  "appbarDropdownMenu": "Appbar Dropdown Menu",
   "typography": "Typography",
-  "helloFromLeafy": "Hello from Leafy!"
+  "helloFromLeafy": "Hello from Leafy!",
+  "menuItem": "Menu Item {number}",
+  "@menuItem": {
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  }
 }

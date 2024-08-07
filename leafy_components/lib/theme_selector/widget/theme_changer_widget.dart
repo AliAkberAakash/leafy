@@ -4,8 +4,8 @@ import 'package:example/theme_selector/bloc/theme_bloc.dart';
 import 'package:example/theme_selector/bloc/theme_event.dart';
 import 'package:flutter/material.dart';
 import 'package:leafy/components/icons/leafy_icons.dart';
-import 'package:leafy/components/lf_dropdown_menu/lf_drop_down_icon_menu/lf_drop_down_menu_model.dart';
-import 'package:leafy/components/lf_dropdown_menu/lf_drop_down_icon_menu/lf_drop_down_icon_menu_widget.dart';
+import 'package:leafy/components/lf_dropdown_menu/leafy_appbar_menu/leafy_app_bar_icon_menu.dart';
+import 'package:leafy/components/lf_dropdown_menu/leafy_appbar_menu/leafy_app_bar_icon_menu_model.dart';
 import 'package:leafy/styles/leafy_extension.dart';
 
 class ThemeChangerWidget extends StatelessWidget {
@@ -20,23 +20,23 @@ class ThemeChangerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LfDropDownIconMenuWidget(
+    return LeafyAppBarIconMenu(
       menuData: [
-        LfDropDownMenuModel(
+        LeafyAppBarIconMenuModel(
           title: context.localizations.light,
           onClick: () {
             themeBloc.add(LightThemeEvent());
           },
           iconData: LeafyIcons.sun,
         ),
-        LfDropDownMenuModel(
+        LeafyAppBarIconMenuModel(
           title: context.localizations.dark,
           onClick: () {
             themeBloc.add(DarkThemeEvent());
           },
           iconData: LeafyIcons.moon,
         ),
-        LfDropDownMenuModel(
+        LeafyAppBarIconMenuModel(
           title: context.localizations.system,
           onClick: () {
             themeBloc.add(SystemThemeEvent());

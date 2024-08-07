@@ -1,6 +1,6 @@
-import 'package:example/components/appbar/typography_screen.dart';
+import 'package:example/components/app_bar_dropdown_menu/app_bar_dropdown_menu_screen.dart';
 import 'package:example/components/buttons/buttons_screen.dart';
-import 'package:example/components/dropdown_menu/dropdown_menu_screen.dart';
+import 'package:example/components/typography/typography_screen.dart';
 import 'package:example/core/model/component_data.dart';
 import 'package:example/core/screen/component_screen.dart';
 import 'package:example/core/screen/list_screen.dart';
@@ -36,8 +36,8 @@ class HomeScreen extends StatelessWidget {
             const ButtonsScreen(),
           ),
           ComponentData(
-            context.localizations.dropdownMenu,
-            const DropdownMenuScreen(),
+            context.localizations.appbarDropdownMenu,
+            const AppBarDropdownMenuScreen(),
           ),
           ComponentData(
             context.localizations.typography,
