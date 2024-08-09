@@ -22,7 +22,7 @@ Currently, the project includes:
 - [x]  Border Size
 - [x]  Icon
 - [x]  IocnSize
-- [ ]  Typography
+- [x]  Typography
 
 ### Themes:
 - [x]  Dark Theme
