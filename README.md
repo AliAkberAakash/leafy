@@ -28,6 +28,11 @@ Currently, the project includes:
 - [x]  Dark Theme
 - [x]  Light Theme
 
+### Localization:
+- [x]  English
+- [x]  Deutsch (German)
+- [x]  Bengali (Bangla)
+
 ### Components:
 - [x]  Buttons
   - [x]  Filled Buttons
