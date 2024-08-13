@@ -43,4 +43,5 @@ Currently, the project includes:
 I'll be gradually adding more components.
 
 ## Contributions
-If you want to work on it, check the issues and ask to be assigned!
+I'm not accepting contributions at the moment, since there are many architectural decisions to make. 
+Once there are tasks that can be done parallelly, I'll start accepting contributions.
