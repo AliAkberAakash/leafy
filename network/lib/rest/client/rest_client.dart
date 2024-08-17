@@ -1,10 +1,12 @@
 abstract class RestClient{
-  dynamic get(dynamic queryParam);
-  dynamic post(dynamic requestBody);
-  dynamic put(dynamic queryParam);
-  dynamic delete(dynamic queryParam);
-  dynamic multipart();
 
-  void addInterceptor();
-  void deleteInterceptor();
+  Future<dynamic> get(String url, {Map<String, dynamic>? queryParameters});
+  Future<dynamic> post(String url, {dynamic data, Map<String, dynamic>? queryParameters});
+  Future<dynamic> put(String url, {dynamic data, Map<String, dynamic>? queryParameters});
+  Future<dynamic> delete(String url, {Map<String, dynamic>? queryParameters});
+
+  //dynamic multipart();
+
+  //void addInterceptor();
+  //void deleteInterceptor();
 }
